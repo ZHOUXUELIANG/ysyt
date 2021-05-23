@@ -1,0 +1,41 @@
+
+minio:
+  endpoint: http://119.23.237.129:${minio.port}/
+  accessKey: minioadmin
+  secretKey: minioadmin
+  bucketNameTxt: txt
+  bucketNameImage: image
+  secure: false
+  port: 9000
+
+spring:
+  application:
+    name: ysyt
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: admin
+  servlet:
+    multipart:    #配置上传大小限制
+      max-file-size: 100MB
+      max-request-size: 100MB
+ # 修改配置环境
+  profiles:
+    active: pro
+
+
+
+
+server:
+  port: 8285
+
+
+#配置日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
